@@ -1,0 +1,22 @@
+#photos {
+  /* prevent vertical gaps */
+  line-height: 0;
+
+  -webkit-column-count: 5;
+  -webkit-column-gap:   0px;
+  -moz-column-count:    5;
+  -moz-column-gap:      0px;
+  column-count:         5;
+  coumn-gap:            0px;
+}
+
+#photos img {
+  /* just in case there are inline attributes */
+  width: 100% !important;
+  height: auto !important;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}

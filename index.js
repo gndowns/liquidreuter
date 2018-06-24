@@ -8,8 +8,8 @@ const PORT = process.env.PORT || 3000;
 
 // raw html only
 app.engine('html', ejs.renderFile);
-// app.use(express.static(__dirname + '/public'));
-// app.set('views', __dirname
+app.use(express.static(__dirname + '/public'));
+app.set('views', __dirname + '/views');
 
 
 app.get('/', function(req,res) {
