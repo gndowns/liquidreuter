@@ -1,3 +1,9 @@
+/* references:
+- https://css-tricks.com/seamless-responsive-photo-grid/
+- https://www.w3schools.com/howto/howto_css_image_grid_responsive.asp
+*/
+
+
 #photos {
   /* prevent vertical gaps */
   line-height: 0;
