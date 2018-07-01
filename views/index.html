@@ -2,6 +2,8 @@
 <head>
   <link rel='stylesheet' href='style.css'/>
   <link rel="icon" href="icon.png"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
   <title>LiquidReuter</title>
 </head>
 <body>
@@ -36,8 +38,34 @@
     <img src='bars.jpg'/>
     <img src='cereal.jpg'/>
     <img src='turtle_head.jpg'/>
-    
+
     <img src='pancakes.gif'/>
+
+    <!-- flips between wooter and nixon vid on click -->
+    <div id='clickable'>
+    <div id='wooter'>
+      <img src='wooter.jpg'/>
+    </div>
+    <div id='nixon' style='display:none;'>
+      <video controls playsinline autoplay loop>
+        <source src='videos/nixon.mp4' type='video/mp4'/>
+      </video>
+    </div>
+    </div>
+    <script>
+      $('#clickable').on('click', function() {
+        console.log('hello');
+        if($('#nixon').css('display')=='none') {
+          $('#nixon').show();
+          $('#wooter').hide();
+        }
+        else {
+          $('#nixon').hide();
+          $('#wooter').show();
+        }
+      })
+    </script>
+
     <img src='desktop.png'/>
     <img src='heaven_reuter.jpg'/>
     <img src='zombies_reuter.jpg'/>
