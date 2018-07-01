@@ -103,5 +103,20 @@
     <img src='happy_reuter.jpg'/>
     <img src='driveway_reuter.jpg'/>
   </section>
+
+  <!-- Pop up picture -->
+  <div id="myModal" class="modal">
+    <img src='stella.jpg'/>
+    <span id="close">&times;</span>
+  </div> 
+  <!-- make display after 10 seconds -->
+  <script>
+    setTimeout(function() {
+      $('#myModal').show();
+    }, 10000);
+    $('#close').click(function() {
+      $('#myModal').hide();
+    });
+  </script>
 </body>
 </html>
