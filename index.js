@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const ejs = require('ejs');
 const fs = require('fs');
+const shuffle = require('shuffle-array');
 
 
 // use Heroku port
@@ -20,6 +21,8 @@ IMAGE_NAMES = fs.readdirSync(__dirname + '/public/images');
 
 
 app.get('/', function(req,res) {
+  // shuffle order of image names before sending to client
+  shuffle(IMAGE_NAMES);
   res.render('index.html', {image_names: IMAGE_NAMES});
 });
 
