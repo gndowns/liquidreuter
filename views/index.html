@@ -8,15 +8,18 @@
 </head>
 <body>
   <section id='photos'>
-    <%# dynamically insert images in random order using ejs %>
-    <% image_names.forEach(function(img_name){ %>
-    <%# add img div with next photo in list %>
-    <img src='images/<%= img_name %>'/>
-    <% }); %>
-
+    <%# dynamically insert images and videos in random order using ejs %>
+    <% file_names.forEach(function(file){ %>
+    <%# if is an image, add img tag with next photo in list %>
+    <% if(file.ftype == 'img' ) { %>
+    <img src='images/<%= file.src %>'/>
+    <%# else if file is a video, add video tag with autoplay and loop %>
+    <% } else if (file.ftype == 'video' ) { %>
     <video controls playsinline autoplay loop>
-      <source src='videos/my_guy_1.mp4' type='video/mp4'/>
+      <source src='videos/<%= file.src %>' type='video/mp4'/>
     </video>
+    <% } %>
+    <% }); %>
 
 
     <!-- flips between wooter and nixon vid on click -->
@@ -44,13 +47,6 @@
       })
     </script>
 
-    <video controls playsinline autoplay loop>
-      <source src='videos/my_guy_2.mp4' type='video/mp4'/>
-    </video>
-
-    <video controls playsinline autoplay loop>
-      <source src='videos/couch_reuter.mp4' type='video/mp4'/>
-    </video>
 
   </section>
 
