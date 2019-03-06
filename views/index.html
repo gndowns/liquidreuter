@@ -8,41 +8,15 @@
 </head>
 <body>
   <section id='photos'>
-    <img src='images/tall_reuter.jpg'/>
-    <img src='images/turtle_reuter.jpg'/>
-    <img src='images/floating_reuter.jpg'/>
-    <img src='images/stumpy.jpg'/>
-    
+    <%# dynamically insert images in random order using ejs %>
+    <% image_names.forEach(function(img_name){ %>
+    <%# add img div with next photo in list %>
+    <img src='images/<%= img_name %>'/>
+    <% }); %>
+
     <video controls playsinline autoplay loop>
       <source src='videos/my_guy_1.mp4' type='video/mp4'/>
     </video>
-
-    <img src='images/elementary.jpg'/>
-    <img src='images/face_swap.png'/>
-
-    <img src='images/liquid_painting.jpg'/>
-
-    <img src='images/the_gang.png'/>
-    <img src='images/ed.jpg'/>
-    <img src='images/lone_beach_reuter.jpg'/>
-    <img src='images/america.png'/>
-    <img src='images/oreo.jpg'/>
-    <img src='images/cereal_baby.jpg'/>
-    <img src='images/post.png'/>
-    <img src='images/fractal_sparse.png'/>
-    <img src='images/painting.jpg'/>
-    <img src='images/ryuk.png'/>
-    <img src='images/deep_fried_guy.jpg'/>
-    <img src='images/panorama.jpg'/>
-    <img src='images/deep_fry_gray.png'/>
-    <img src='images/teletubies.jpg'/>
-    <img src='images/wide_reuter.jpg'/>
-
-    <img src='images/lockscreen.jpg'/>
-    <img src='images/zombies_1.jpg'/>
-    <img src='images/bars.jpg'/>
-    <img src='images/cereal.jpg'/>
-    <img src='images/turtle_head.jpg'/>
 
 
     <!-- flips between wooter and nixon vid on click -->
@@ -69,39 +43,15 @@
         }
       })
     </script>
-    <img src='images/pancakes.gif'/>
-
-    <img src='images/heaven_reuter.jpg'/>
-
-    <img src='images/lone_beach_reuter.jpg'/>
-    <img src='images/rat_race_sub_1.gif'/>
-    <img src='images/liquid_reuter.png'/>
-
-    <img src='images/fractal_dense.png'/>
-    <img src='images/donald_reuter.png'/>
-    <img src='images/boat_reuter.png'/>
 
     <video controls playsinline autoplay loop>
       <source src='videos/my_guy_2.mp4' type='video/mp4'/>
     </video>
 
-    <img src='images/architect_reuter.png'/>
-    <img src='images/baby_reuter.jpg'/>
-    <img src='images/demon_turtle.jpg'/>
-    <img src='images/balls_kill.gif'/>
-    <img src='images/unwide.jpg'/>
-    <img src='images/demon_baby.jpg'/>
-    <img src='images/zombies_reuter.jpg'/>
-    <img src='images/middle_part_reuter.jpg'/>
-    <img src='images/baby_reuter.jpg'/>
-    <img src='images/stumpy_2.jpg'/>
-
     <video controls playsinline autoplay loop>
       <source src='videos/couch_reuter.mp4' type='video/mp4'/>
     </video>
 
-    <img src='images/happy_reuter.jpg'/>
-    <img src='images/driveway_reuter.jpg'/>
   </section>
 
   <!-- Pop up picture -->
