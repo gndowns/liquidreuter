@@ -11,6 +11,8 @@
     <%# dynamically insert images and videos in random order using ejs %>
     <%# choose random index to insert wooter/nixon pic/vid %>
     <% var wooter_idx = Math.floor(Math.random() * file_names.length)%>
+    <%# choose random index to insert file upload form %>
+    <% var upload_idx = Math.floor(Math.random() * file_names.length)%>
     <% file_names.forEach(function(file, i){ %>
     <%# if is an image, add img tag with next photo in list %>
     <% if(file.ftype == 'img' ) { %>
@@ -48,7 +50,29 @@
       })
     </script>
     <% } %>
+
+    <%# insert file upload form at appropriate index %>
+    <% if (i == upload_idx) { %>
+    <form action='/file_upload' method='post' enctype='multipart/form-data'>
+      <!-- fake button displayed, with large size -->
+      <button id='file_upload_button' style='width: 300px; height: 300px'>UPLOAD MORE LIQUID</button>
+      <!-- actual file input, hidden but linked to by button above -->
+      <input type='file' name='file_to_upload' id='file_to_upload', style='display: none'/>
+      <input type='submit' name='submit' style='width: 300px;'/>
+    </form>
+    
+    <script>
+      // link fake button to file upload form
+      $('#file_upload_button').click(function(){
+        $('#file_to_upload').click();
+        // prevent form from submitting after button clicked
+        return false;
+      });
+    </script>
+    <% } %>
     <% }); %>
+
+
 
   </section>
 
